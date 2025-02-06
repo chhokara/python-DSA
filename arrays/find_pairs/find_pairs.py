@@ -7,10 +7,7 @@ def find_pairs_with_sum(nums, target):
         if complement in num_counts:
             pairs.extend([(complement, num)] * num_counts[complement])
         
-        if num in num_counts:
-            num_counts[num] += 1
-        else:
-            num_counts[num] = 1
+        num_counts[num] = num_counts.get(num, 0) + 1
 
     return pairs
 
